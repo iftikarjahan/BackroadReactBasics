@@ -1,9 +1,12 @@
+import { footerLinks, socialLinks } from "../data";
+
 export default function Footer() {
   return (
     <>
       <footer className="section footer">
         <ul className="footer-links">
-          <li>
+          {/*These unordered list could be dynamically rendered */}
+          {/* <li>
             <a href="#home" className="footer-link">
               home
             </a>
@@ -22,10 +25,35 @@ export default function Footer() {
             <a href="#featured" className="footer-link">
               featured
             </a>
-          </li>
+          </li> */}
+
+          {footerLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <a href={link.href} className="footer-link">
+                  {link.text}
+                </a>
+              </li>
+            );
+          })}
         </ul>
+
         <ul className="footer-icons">
-          <li>
+          {socialLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  className="footer-icon"
+                >
+                  <i className={link.icon}></i>
+                </a>
+              </li>
+            );
+          })}
+
+          {/* <li>
             <a
               href="https://www.twitter.com"
               target="_blank"
@@ -51,7 +79,7 @@ export default function Footer() {
             >
               <i className="fab fa-squarespace"></i>
             </a>
-          </li>
+          </li> */}
         </ul>
         <p className="copyright">
           copyright &copy; Backroads travel tours company

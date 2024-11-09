@@ -1,49 +1,30 @@
 import Title from "./Title";
+import { services } from "../data";
 
 export default function Services() {
   return (
     <>
       <section className="section services" id="services">
-        <Title title="Our" subtitle="Services"/>
+        <Title title="Our" subtitle="Services" />
         <div className="section-center services-center">
-          <article className="service">
-            <span className="service-icon">
-              <i className="fas fa-wallet fa-fw"></i>
-            </span>
-            <div className="service-info">
-              <h4 className="service-title">saving money</h4>
-              <p className="service-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, officia.
-              </p>
-            </div>
-          </article>
 
-          <article className="service">
-            <span className="service-icon">
-              <i className="fas fa-tree fa-fw"></i>
-            </span>
-            <div className="service-info">
-              <h4 className="service-title">endless hiking</h4>
-              <p className="service-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, officia.
-              </p>
-            </div>
-          </article>
+            {/* we are rendering the services dynamically using an array of data*/}
+          {services.map((service) => {
+            return (
+              <article className="service">
+                <span className="service-icon">
+                  <i className={service.serviceIcon}></i>
+                </span>
+                <div className="service-info">
+                  <h4 className="service-title">{service.serviceTitle}</h4>
+                  <p className="service-text">
+                    {service.serviceText}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
 
-          <article className="service">
-            <span className="service-icon">
-              <i className="fas fa-socks fa-fw"></i>
-            </span>
-            <div className="service-info">
-              <h4 className="service-title">amazing comfort</h4>
-              <p className="service-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, officia.
-              </p>
-            </div>
-          </article>
         </div>
       </section>
     </>

@@ -12,7 +12,7 @@ export default function Navbar() {
               <i className="fas fa-bars"></i>
             </button>
           </div>
-          {/* <!-- left this comment on purpose --> */}
+          {/* Both the unordered list are being rendered dynamically using the list method */}
           <ul className="nav-links" id="nav-links">
             {pageLinks.map((link) => {
               return (
@@ -36,6 +36,8 @@ export default function Navbar() {
               );
             })}
           </ul>
+
+
         </div>
       </nav>
     </>
