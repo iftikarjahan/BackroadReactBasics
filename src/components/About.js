@@ -27,7 +27,7 @@ export default function About() {
               Aspernatur quisquam harum nam cumque temporibus explicabo dolorum
               sapiente odio unde dolor?
             </p>
-            <a className="btn">
+            <a href="https://www.squarespace.com" className="btn">
               read more
             </a>
           </article>
